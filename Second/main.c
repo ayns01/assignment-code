@@ -1,15 +1,38 @@
-//
-//  main.c
-//  Second
-//
-//  Created by 酒井綾菜 on 2018-05-16.
-//  Copyright © 2018 Ayana Sakai. All rights reserved.
-//
+/*
+  ============================================================================
+  Name        : problem5.c
+  Author      : ayana
+  Version     :
+  Copyright   : Your copyright notice
+  Description : Hello World in C, Ansi-style
+  ============================================================================
+  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+void sumDigit(int number){
+    
+    int sum = 0;
+    int r = 0;
+    
+    while(number != 0){
+        r = number%10;
+        sum = sum + r;
+        number = (int)number/10;
+    };
+    //sum = sum + number;
+    printf("sum of the digit of number is %d", sum);
+    
 }
+
+int main(void) {
+    
+    int n = 0;
+    printf("Enter positive integer: ");
+    scanf("%d", &n);
+    
+    sumDigit(n);
+    
+}
+
