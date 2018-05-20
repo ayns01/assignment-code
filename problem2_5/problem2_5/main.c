@@ -6,6 +6,10 @@
 //  Copyright © 2018 Ayana Sakai. All rights reserved.
 //
 
+/*
+    Write a function,which takes two integer numbers and swaps their values using call by reference.
+ */
+
 #include <stdio.h>
 
 int swap(int *a, int *b) {
@@ -21,7 +25,7 @@ int swap(int *a, int *b) {
 }
 
 int main(void) {
-    // call by Reference...
+    
     int n1, n2;
     printf("Enter two numbers to swap\n");
     scanf("%d%d", &n1, &n2);

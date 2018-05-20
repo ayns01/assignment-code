@@ -6,16 +6,21 @@
 //  Copyright © 2018 Ayana Sakai. All rights reserved.
 //
 
+/*
+    Write a function which takes 3 inputs, a, b and r and calculate how many circles
+    with radius r can be entered inside a rectangle with sides a and b.
+*/
+ 
 #include <stdio.h>
 
-int culc(int a, int b, int r) {
+int calc(int h, int w, int r) {
     
-    int p, q, res;
+    int a, b, res;
     
-    p = (int)a / (2 * r);
-    q = (int)b / (2 * r);
+    a = (int)h / (2 * r);
+    b = (int)w / (2 * r);
     
-    res = p * q;
+    res = a * b;
     
     printf("Circles in the rectagle is %d\n", res);
     
@@ -25,16 +30,17 @@ int culc(int a, int b, int r) {
 
 int main(void) {
     
-    int a = 0, b = 0, r = 0;
-    printf("calculate how many circles can be entered inside a rectangle\n");
+    int h = 0, w = 0, r = 0;
+    printf("The calculation of how many circles can be entered inside a rectangle\n");
     printf("Enter height of rectangle\n");
-    scanf("%d", &a);
+    scanf("%d", &h);
     printf("Enter width of rectangle\n");
-    scanf("%d", &b);
+    scanf("%d", &w);
     printf("Enter radius of circles\n");
     scanf("%d", &r);
     
-    culc(a, b, r);
+    calc(h, w, r);
     
     return 0;
+    
 }

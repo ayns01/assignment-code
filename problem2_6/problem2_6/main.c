@@ -6,57 +6,83 @@
 //  Copyright © 2018 Ayana Sakai. All rights reserved.
 //
 
+/*
+    Write a function,which takes two numbers and returns all prime numbers between the two numbers.
+*/
+
 #include <stdio.h>
 
-int printPrimeNumBetweenNum(int a, int b) {
+int printPrimeBetNum(int a, int b) {
     
     int r = 0;
     int flag = 0;
     
-    printf("All prime numbers between the two numbers is\n");
+    printf("All prime numbers between %d and %d is\n", a, b);
     
     if(a < b) {
         
-        int na = a + 1;
+        int nxta = a + 1;
         
-        for(int i=na; i<b; i++) {
+        for(int i=nxta; i<b; i++) {
             
-            for(int j=2; j<na; j++) {
-                    r = na % j;
+            for(int j=2; j<nxta; j++) {
+                
+                    r = nxta % j;
+                
                     if(r == 0){
+                        
                         flag = 1;
                         break;
+                        
                     }
+                
             }
+            
             if(flag != 1) {
-                printf("%d\t", na);
+                
+                printf("%d\t", nxta);
+                
             }
-            na = na + 1;
+            
+            nxta = nxta + 1;
             flag = 0;
+            
         }
         
     }else if(a > b) {
         
-        int nb = b + 1;
+        int nxtb = b + 1;
+        int i, j;
         
-        for(int i=nb; i<a; i++) {
-            for(int j=2; j<nb; j++) {
-                r = nb % j;
+        for(i=nxtb; i<a; i++) {
+            
+            for(j=2; j<nxtb; j++) {
+                
+                r = nxtb % j;
+                
                 if(r == 0){
+                    
                     flag = 1;
                     break;
+                    
                 }
             }
+            
             if(flag != 1) {
-                printf("%d\t", nb);
+                
+                printf("%d\t", nxtb);
+                
             }
-            nb = nb + 1;
+            
+            nxtb = nxtb + 1;
             flag = 0;
+            
         }
         
     }
     
     printf("\n");
+    
     return 0;
     
 }
@@ -65,12 +91,15 @@ int main(void) {
     
     int a = 0, b = 0;
     
+    printf("it is called all prime numbers between the two numbers\n");
+    
     printf("Enter positive integer\n");
     scanf("%d", &a);
+    
     printf("Enter positive integer\n");
     scanf("%d", &b);
     
-    printPrimeNumBetweenNum(a, b);
+    printPrimeBetNum(a, b);
     
     return 0;
     

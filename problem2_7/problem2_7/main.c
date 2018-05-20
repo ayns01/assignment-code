@@ -6,48 +6,62 @@
 //  Copyright © 2018 Ayana Sakai. All rights reserved.
 //
 
+/*
+    Write a function ask for an numerical input from the user and reads the input from the user
+    and will check the following:oWhether the number is odd or even.
+    o Whether the number is dividend of 3.
+    o Whether the number if dividend of 7.
+    o Whether the number is a prime number.
+ */
+
 #include <stdio.h>
 
-int judgeOddOrEven(int n) {
+void isOddOrEven(int n) {
     
     if(n % 2 == 0) {
+        
         printf("even\n");
+        
     }else {
+        
         printf("odd\n");
+        
     }
-    return 0;
     
 }
 
-int judgeDividendOf3(int n) {
+void isDividendOf3(int n) {
     
     if(n % 3 == 0) {
+        
         printf("dividend of 3\n");
+        
     }
-    return 0;
     
 }
 
-int judgeDividendOf7(int n) {
+void isDividendOf7(int n) {
     
     if(n % 7 == 0) {
+        
         printf("dividend of 7\n");
+        
     }
-    return 0;
-    
+        
 }
 
 int main(void) {
     
-    int n = 0;
+    int num = 0;
+    
     printf("Enter number\n");
-    scanf("%d", &n);
+    scanf("%d", &num);
     
-    printf("input number %d is\n", n);
+    printf("input number %d is\n", num);
     
-    judgeOddOrEven(n);
-    judgeDividendOf3(n);
-    judgeDividendOf7(n);
+    isOddOrEven(num);
+    isDividendOf3(num);
+    isDividendOf7(num);
 
     return 0;
 }
