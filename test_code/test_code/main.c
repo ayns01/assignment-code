@@ -7,27 +7,39 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
-int main(int argc, const char * argv[]) {
-    int x = 5, y = 7;
-    y = ++x;
-    printf("%d\n", y);
+struct Employee
+{
+    int no;
+    char name[51];
+    int salary;
+};
+
+int main(int argc, char *argv[])
+{
+    struct Employee e[] = {
+        {100, "Taro", 200000},
+        {100, "Jiro", 300000},
+        {100, "Saburo", 170000},
+        {100, "Hanako", 500000},
+    };
     
+    struct Employee *e_ptr;
     
-    int a = 6;
-    if(a == 6) {
-        int a = 5;
-        {
-            printf("%d\n", a);
+    e_ptr = e;
+    
+    while(1) {
+        if(e_ptr->no == 0) {
+            break;
         }
+        printf("%d,%s,%d\n", e_ptr->no, e_ptr->name, e_ptr->salary);
+        
+        e_ptr++;
+        
     }
-    
-    int sum;
-    for(int i=0; i<5; i++) {
-        sum = 0;
-        sum = sum + i;
-    }
-    printf("%d", sum);
     
     return 0;
 }
+    
+
